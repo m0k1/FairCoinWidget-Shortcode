@@ -1,4 +1,4 @@
-=== Google Calendar Widget ===
+=== Coinwidget Shortcode ===
 Contributors: poco
 Donate link: http://notions.okuda.ca
 Tags: coinwidget, bitcoin
