@@ -23,21 +23,25 @@ Embed the short [coinwidget] anywhere in your posts or template to include a coi
 
 Supported attributes as documented here http://coinwidget.com/
 
-address - default ""
-currency - default "bitcoin"
-counter - default "count"
-alignment - default "bl"
-qrcode - default "true"
-auto_show - default "false"
-decimals - default "4"
-lbl_button - default "Donate"
-lbl_address - default "My Bitcoin Address:"
-lbl_count - default "donations"
-lbl_amount - default "BTC"
+* address - default ""
+* currency - default "bitcoin"
+* counter - default "count"
+* alignment - default "bl"
+* qrcode - default "true" 
+* auto_show - default "false"
+* decimals - default "4"
+* lbl_button - default "Donate"
+* lbl_address - default "My Bitcoin Address:"
+* lbl_count - default "donations"
+* lbl_amount - default "BTC"
 
 Example:
 
-[coinwidget address="12uaFq9CyGZBoT6nSbVzZ2AjGnZkfRSHoy" currency="bitcoin" counter="count" alignment="al" qrcode="false" auto_show="true" lbl_button="Press Me" lbl_address="Me Place" lbl_count="Gimme" lbl_amount="$$$"]
+`[coinwidget
+	address="12uaFq9CyGZBoT6nSbVzZ2AjGnZkfRSHoy" currency="bitcoin"
+	counter="count" alignment="al" qrcode="false" auto_show="true"
+	lbl_button="Press Me" lbl_address="Me Place" lbl_count="Gimme"
+	lbl_amount="$$$"]`
 
 == Installation ==
 
