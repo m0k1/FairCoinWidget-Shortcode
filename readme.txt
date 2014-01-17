@@ -62,12 +62,17 @@ Anywhere in a post or template (or sidebar widget if you have the appropriate pl
 
 == Changelog ==
 
+= 1.1 =
+* 2014-01-16
+* Fix for coinwidget.com issue #4 - https://github.com/scottycc/coinwidget.com/issues/4
+*  Replaced document.lastChild.firstChild.appendChild(x) with this document.body.appendChild(x)
+
 = 1.0 =
 * 2013-12-09
 * Initial release
 
 == Upgrade Notice ==
 
-= 1.0 =
-* 2013-12-09
-* Initial release
+= 1.1 =
+* 2014-01-16
+* Fix for coinwidget.com issue #4 - https://github.com/scottycc/coinwidget.com/issues/4

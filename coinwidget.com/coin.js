@@ -297,7 +297,9 @@ var CoinWidgetCom = {
 				};
 				x.src = obj.source;
 				x.id  = obj.id;
-				document.lastChild.firstChild.appendChild(x);
+				// FIX for issue #4 https://github.com/scottycc/coinwidget.com/issues/4
+				//document.lastChild.firstChild.appendChild(x);
+				document.body.appendChild(x)
 			}
 		}
 		, stylesheet_loaded: false

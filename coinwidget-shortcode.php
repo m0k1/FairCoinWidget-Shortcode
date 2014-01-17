@@ -1,7 +1,7 @@
 <?php
 /*
  * Plugin Name: Coinbase-Shortcode
- * Version: 1.0
+ * Version: 1.1
  * Plugin URI: http://notions.okuda.ca
  * Description: Shortcode for coinwidget.com buttons
  * Author: Kaz Okuda
