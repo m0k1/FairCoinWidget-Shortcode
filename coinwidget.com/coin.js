@@ -64,12 +64,12 @@ var CoinWidgetCom = {
 	}
 	, validate: function(config) {
 		var $accepted = [];
-		$accepted['currencies'] = ['bitcoin','litecoin', 'dogecoin', 'auroracoin', 'franko', 'vertcoin', 'flappycoin', 'lottocoin', 'peercoin', 'nyancoin', 'feathercoin', 'fedoracoin'];
+		$accepted['currencies'] = ['bitcoin','litecoin', 'faircoin', 'dogecoin', 'auroracoin', 'franko', 'vertcoin', 'flappycoin', 'lottocoin', 'peercoin', 'nyancoin', 'feathercoin', 'fedoracoin'];
 		$accepted['counters'] = ['count','amount','hide'];
 		$accepted['amount'] = ['show','hide'];
 		$accepted['alignment'] = ['al','ac','ar','bl','bc','br'];
 		if (!config.currency || !CoinWidgetCom.in_array(config.currency,$accepted['currencies']))
-			config.currency = 'bitcoin';
+			config.currency = 'faircoin';
 		if (!config.counter || !CoinWidgetCom.in_array(config.counter,$accepted['counters']))
 			config.counter = 'count';
 		if (!config.amount || !CoinWidgetCom.in_array(config.amount,$accepted['amount']))
@@ -88,11 +88,11 @@ var CoinWidgetCom = {
 		if (!config.lbl_button) 
 			config.lbl_button = 'Donate';
 		if (!config.lbl_address)
-			config.lbl_address = 'My Bitcoin Address:';
+			config.lbl_address = 'My Faircoin Address:';
 		if (!config.lbl_count)
 			config.lbl_count = 'Donation';
 		if (!config.lbl_amount)
-			config.lbl_amount = 'BTC';
+			config.lbl_amount = 'FAIR';
 		if (typeof config.decimals != 'number' || config.decimals < 0 || config.decimals > 10)
 			config.decimals = 4;
 
