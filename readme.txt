@@ -1,7 +1,7 @@
 === Coinwidget Shortcode ===
-Contributors: poco
+Contributors: yuri
 Donate link: http://notions.okuda.ca
-Tags: coinwidget, bitcoin
+Tags: coinwidget, faircoin
 Requires at least: 3.0
 Tested up to: 3.7.1
 Stable tag: trunk
@@ -24,21 +24,21 @@ Embed the short [coinwidget] anywhere in your posts or template to include a coi
 Supported attributes as documented here http://coinwidget.com/
 
 * address - default ""
-* currency - default "bitcoin"
+* currency - default "faircoin"
 * counter - default "count"
 * alignment - default "bl"
 * qrcode - default "true" 
 * auto_show - default "false"
 * decimals - default "4"
 * lbl_button - default "Donate"
-* lbl_address - default "My Bitcoin Address:"
+* lbl_address - default "My Faircoin Address:"
 * lbl_count - default "donations"
-* lbl_amount - default "BTC"
+* lbl_amount - default "FAIR"
 
 Example:
 
 `[coinwidget
-	address="12uaFq9CyGZBoT6nSbVzZ2AjGnZkfRSHoy" currency="bitcoin"
+	address="fTSjheCjvTCHWkTqggn2bwyk13Cp32mvt2" currency="faircoin"
 	counter="count" alignment="al" qrcode="false" auto_show="true"
 	lbl_button="Press Me" lbl_address="Me Place" lbl_count="Gimme"
 	lbl_amount="$$$"]`
@@ -46,14 +46,14 @@ Example:
 == Installation ==
 
 1. Download the plugin via WordPress.org
-1. Includes the current master branch of coinwidget.com in the "coinwidget.com" folder from here (https://github.com/scottycc/coinwidget.com).  You should be able to upgrade to newer versions by replace the contents of that folder.
+1. Includes the current master branch of coinwidget.com in the "coinwidget.com" folder from here (https://github.com/yyuri/FairCoinWidget/).  You should be able to upgrade to newer versions by replace the contents of that folder.
 1. Include the shortcode anywhere in your posts or pages or template.  With the appropriate plugins you can also include shortcodes in sidebar widgets.
 
 == Frequently Asked Questions ==
 
 = I've installed the plugin - now what? =
 
-Anywhere in a post or template (or sidebar widget if you have the appropriate plugins installed) you can include the text [coinwidget address="<your bitcoin address>"] and it will be replaced with a button as seen on http://coinwidget.com/.
+Anywhere in a post or template (or sidebar widget if you have the appropriate plugins installed) you can include the text [coinwidget address="<your faircoin address>"] and it will be replaced with a button as seen on http://coinwidget.com/.
 
 == Screenshots ==
 
