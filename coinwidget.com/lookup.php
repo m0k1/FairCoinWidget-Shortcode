@@ -66,7 +66,9 @@ THE SOFTWARE.
 					case 'dogecoin':
 						$response = get_dogecoin($address);
 						break;
-
+					case 'faircoin':
+						$response = get_faircoin($address);
+						break;
 					case 'auroracoin':
 						$response = get_auroracoin($address);
 						break;
@@ -126,6 +128,19 @@ THE SOFTWARE.
 			return $return;
 		}
 	}
+	function get_faircoin($address) {
+		$return = array();
+		$data = get_request('https://chain.fair-coin.org/address/'.$address); 
+	if (!empty($data)
+	  && preg_match("/Transactions in: (.*)/", $data, $count)
+	  && preg_match("/Received: (.*) LTC/", $data, $amount)) {
+	  	$return += array(
+			'count' => (int) $count[1],
+			'amount' => (float) $amount[1]
+		);
+	  	return $return;
+	}		
+	}	
 
 	function get_litecoin($address) {
 		$return = array();
