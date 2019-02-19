@@ -1,9 +1,9 @@
 <?php
 /*
- * Plugin Name: Coinbase-Shortcode
+ * Plugin Name: FairCoinWidget-Shortcode
  * Version: 1.1
- * Plugin URI: http://notions.okuda.ca
- * Description: Shortcode for coinwidget.com buttons
+ * Plugin URI: http://github.com/m0k1/FairCoinWidget-Shortcode
+ * Description: Shortcode for FairCoinWidget buttons
  * Author: Kaz Okuda
  * Author URI: http://notions.okuda.ca
  * Requires at least: 3.0
@@ -13,7 +13,7 @@
 class CoinWidget {
 
 	public function __construct() {
-		$this->coinwidget_url = trailingslashit( plugins_url( '/coinwidget.com/', __FILE__ ) );
+		$this->coinwidget_url = trailingslashit( plugins_url( '/faircoinwidget/', __FILE__ ) );
 		$this->root_url = trailingslashit( plugins_url( '/', __FILE__ ) );
 		add_action('init', array( $this, 'on_init' ));
 		add_shortcode('coinwidget', array( $this, 'handle_shortcode' ));
@@ -29,16 +29,15 @@ class CoinWidget {
 	{
 		extract(shortcode_atts(array(
 			'address' => '',
-			'currency' => 'bitcoin',
 			'counter' => 'count',
 			'alignment' => 'bl',
 			'qrcode' => "true",
 			'auto_show' => "false",
 			'decimals' => "4",
 			'lbl_button' => 'Donate',
-			'lbl_address' => 'My Bitcoin Address:',
+			'lbl_address' => 'My FairCoin Address:',
 			'lbl_count' => 'donations',
-			'lbl_amount' => 'BTC',
+			'lbl_amount' => 'FAIR',
 		), $atts));
 
 		ob_start();
@@ -47,7 +46,6 @@ class CoinWidget {
 			CoinWidgetCom.source = "<?php echo $this->coinwidget_url ?>"
 			CoinWidgetCom.go({
 				wallet_address: "<?php echo $address ?>"
-				, currency: "<?php echo $currency ?>"
 				, counter: "<?php echo $counter ?>"
 				, alignment: "<?php echo $alignment ?>"
 				, qrcode: <?php echo $qrcode ?>

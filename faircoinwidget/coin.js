@@ -1,46 +1,3 @@
-/**
-
-Donations welcome:
-	BTC: 122MeuyZpYz4GSHNrF98e6dnQCXZfHJeGS
-	LTC: LY1L6M6yG26b4sRkLv4BbkmHhPn8GR5fFm
-  DOGE: DE1M61so1Agsx2wLhsKw474Pbq4c7T72Vi
-	AUR:  AbyQ4MEW46b79h72Fj9uP12odVq7gVaJy2
-	FRK:  FASkP9GTQJYbpF2wLXrtQRf2WsqKVa83z2
-	VERT: VpFCVSevgz9kiRaJggPgCFMWuAaj6S9GxC
-	LOT:  LyUWd7VsavSs5pvodChTAFA6K5oaR1RkSF
-	FLAP: FNUxuLfSArrZQEz7rte5xT3Cu3TvkmPi7c
-        NYAN: KSXcP3vmQDDeMrUAqzeKWb7cgAGhZrfaYq
-        FTC:  6uAaYag6YkcnmNaVz4pM25ZdU7w9chVT6a
-        TiPS: Ea6nP2tzwn55ut2ryYMZsSZbyUo6pYvNSL
-		~ Thank you!
-
-------------
-
-MIT License (MIT)
-
-Copyright (c) 2013 http://coinwidget.com/ 
-Copyright (c) 2013 http://scotty.cc/
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
-
-*/
-
 if (typeof CoinWidgetComCounter != 'number')
 var CoinWidgetComCounter = 0;
 
@@ -64,12 +21,9 @@ var CoinWidgetCom = {
 	}
 	, validate: function(config) {
 		var $accepted = [];
-		$accepted['currencies'] = ['bitcoin','litecoin', 'faircoin', 'dogecoin', 'auroracoin', 'franko', 'vertcoin', 'flappycoin', 'lottocoin', 'peercoin', 'nyancoin', 'feathercoin', 'fedoracoin'];
 		$accepted['counters'] = ['count','amount','hide'];
 		$accepted['amount'] = ['show','hide'];
 		$accepted['alignment'] = ['al','ac','ar','bl','bc','br'];
-		if (!config.currency || !CoinWidgetCom.in_array(config.currency,$accepted['currencies']))
-			config.currency = 'faircoin';
 		if (!config.counter || !CoinWidgetCom.in_array(config.counter,$accepted['counters']))
 			config.counter = 'count';
 		if (!config.amount || !CoinWidgetCom.in_array(config.amount,$accepted['amount']))
@@ -84,11 +38,11 @@ var CoinWidgetCom = {
 		if (typeof config.auto_show != 'boolean')
 			config.auto_show = false;
 		if (!config.wallet_address)
-			config.wallet_address = 'My '+ config.currency +' wallet_address is missing!';
+			config.wallet_address = 'My FairCoin wallet_address is missing!';
 		if (!config.lbl_button) 
 			config.lbl_button = 'Donate';
 		if (!config.lbl_address)
-			config.lbl_address = 'My Faircoin Address:';
+			config.lbl_address = 'My FairCoin Address:';
 		if (!config.lbl_count)
 			config.lbl_count = 'Donation';
 		if (!config.lbl_amount)
@@ -115,7 +69,7 @@ var CoinWidgetCom = {
 		$containers.each(function(i,v){
 			$config = CoinWidgetCom.config[$(this).attr('data-coinwidget-instance')];
 			$counter = $config.counter == 'hide'?'':('<span><img src="'+CoinWidgetCom.source+'icon_loading.gif" width="13" height="13" /></span>');
-			$button = '<a class="COINWIDGETCOM_BUTTON_'+$config.currency.toUpperCase()+'" href="#"><img src="'+CoinWidgetCom.source+'icon_'+$config.currency+'.png" /><span>'+$config.lbl_button+'</span></a>'+$counter;
+			$button = '<a class="COINWIDGETCOM_BUTTON_FAIRCOIN" href="#"><img src="'+CoinWidgetCom.source+'icon_faircoin.png" /><span>'+$config.lbl_button+'</span></a>'+$counter;
 			$(this).html($button);
 			$(this).find('> a').unbind('click').click(function(e){
 				e.preventDefault();
@@ -178,7 +132,7 @@ var CoinWidgetCom = {
 			$instance = i;
 			$config = v;
 			if ($config.counter != 'hide')
-				$addresses.push($instance+'_'+$config.currency+'_'+$config.wallet_address);
+				$addresses.push($instance+'_faircoin_'+$config.wallet_address);
 			else {
 				if ($config.auto_show) 
 					$("span[data-coinwidget-instance='"+i+"']").find('> a').click();
@@ -220,10 +174,10 @@ var CoinWidgetCom = {
 			$html = ''
 				  + '<label>'+$config.lbl_address+'</label>'
 				  + '<input type="text" readonly="readonly" '+$sel+'  value="'+$config.wallet_address+'" />'
-				  + '<a class="COINWIDGETCOM_CREDITS" href="http://coinwidget.com/" target="_blank">CoinWidget.com</a>'
-  				  + '<a class="COINWIDGETCOM_WALLETURI" href="'+$config.currency.toLowerCase()+':'+$config.wallet_address+'" target="_blank" title="Click here to send this address to your wallet (if your wallet is not compatible you will get an empty page, close the white screen and copy the address by hand)" ><img src="'+CoinWidgetCom.source+'icon_wallet.png" alt="Send '+$config.currency+' to address" /></a>'
+				  + '<a class="COINWIDGETCOM_CREDITS" href="https://FairCoin.world/" target="_blank">FairCoin.world</a>'
+  				  + '<a class="COINWIDGETCOM_WALLETURI" href="faircoin:'+$config.wallet_address+'" target="_blank" title="Click here to send this address to your wallet (if your wallet is not compatible you will get an empty page, close the white screen and copy the address by hand)" ><img src="'+CoinWidgetCom.source+'icon_wallet.png" alt="Send FairCoin to address" /></a>'
   				  + '<a class="COINWIDGETCOM_CLOSER" href="javascript:;" onclick="CoinWidgetCom.hide('+$instance+');" title="Close this window">x</a>'
-  				  + '<img class="COINWIDGET_INPUT_ICON" src="'+CoinWidgetCom.source+'icon_'+$config.currency+'.png" width="16" height="16" title="This is a '+$config.currency+' wallet address." alt="'+$config.currency+' Logo" />'
+  				  + '<img class="COINWIDGET_INPUT_ICON" src="'+CoinWidgetCom.source+'icon_faircoin.png" width="16" height="16" title="This is a FairCoin wallet address." alt="FairCoin Logo" />'
 				  ;
 			if ($config.counter != 'hide') {
 				$html += '<span class="COINWIDGETCOM_COUNT">0<small>'+$config.lbl_count+'</small></span>';
@@ -233,14 +187,14 @@ var CoinWidgetCom = {
 			}
 			if ($config.qrcode) {
 				$html += '<img class="COINWIDGETCOM_QRCODE" data-coinwidget-instance="'+$instance+'" src="'+CoinWidgetCom.source+'icon_qrcode.png" width="16" height="16" />'
-				  	   + '<img class="COINWIDGETCOM_QRCODE_LARGE" src="'+CoinWidgetCom.source+'icon_qrcode.png" width="111" height="111" alt="'+$config.currency+' address QR code" />'
+				  	   + '<img class="COINWIDGETCOM_QRCODE_LARGE" src="'+CoinWidgetCom.source+'icon_qrcode.png" width="111" height="111" alt="FairCoin address QR code" />'
 				  	   ;
 			}
 			var $div = $('<div></div>');
 			$('body').append($div);
 			$div.attr({
 				'id': 'COINWIDGETCOM_WINDOW_'+$instance
-			}).addClass('COINWIDGETCOM_WINDOW COINWIDGETCOM_WINDOW_'+$config.currency.toUpperCase()+' COINWIDGETCOM_WINDOW_'+$config.alignment.toUpperCase()).html($html).unbind('click').bind('click',function(){
+			}).addClass('COINWIDGETCOM_WINDOW COINWIDGETCOM_WINDOW_FAIRCOIN COINWIDGETCOM_WINDOW_'+$config.alignment.toUpperCase()).html($html).unbind('click').bind('click',function(){
 				$(".COINWIDGETCOM_WINDOW").css({'z-index':99999999998});
 				$(this).css({'z-index':99999999999});
 			});
@@ -343,7 +297,7 @@ var CoinWidgetCom = {
 		}
 		, jquery: function(){
 			if (!window.jQuery && !CoinWidgetCom.loader.loading_jquery) {
-				$prefix = window.location.protocol=='file:'?'http:':'';
+				$prefix = window.location.protocol=='file:'?'https:':'';
 				CoinWidgetCom.loader.script({
 					id			: 'COINWIDGETCOM_JQUERY'
 					, source 	: $prefix + '//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'
